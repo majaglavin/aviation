@@ -8,7 +8,7 @@ Simple model of global aviation.
 
 | True Constant | Value |Unit | 
 | ---- | ---- | --| 
-| Days per year | 365 | -| 
+| Days per year | 365 | $day \cdot year^{-1}$ | 
 
 | Inputs | Value | Unit |Source |
 | ------ | ---- | ------ | --|
