@@ -20,9 +20,9 @@ Simple model of global aviation.
 ### Equations
 
 $
-passengers\ per\ day = \frac{passengers\ per\ year}{days\ per\ year}
+\text{passengers per day} = \frac{\text{passengers per year}}{\text{days per year}}
 $
 
 $
-required\ global\ fleet = \frac{passengers\ per\ day}{seats\ per\ aircraft\ \times\ flights\ per\ aircraft\ per\ day}
+\text{required global fleet} = \frac{\text{passengers per day}}{\text{seats per aircraft}\ \times\ \text{flights per aircraft per day}}
 $
