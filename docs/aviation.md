@@ -8,7 +8,7 @@
 
 | Inputs | Value | Unit |Source |
 | ------ | ---- | ------ | --|
-| Passengers per year | $5\times 10^9$ | year^-1^ | -|
+| Passengers per year | $5\times 10^9$ | year^-1^ | ATAG[@atagFactsFigures]|
 | Flights per aircraft per day| 2 | day^-1^| - |
 | Seats per aircraft| 150 | - | - |
 
@@ -30,3 +30,5 @@ $$
 \label{equation: required-global-fleet}
 \end{equation}
 $$
+
+[ATAG]: [@atagFactsFigures]
