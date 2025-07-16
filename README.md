@@ -2,7 +2,7 @@
 
 ### Dependencies 
 
-This repository uses [uv] for project management. Dependency bounds are defined in [`pyproject.toml`]and the locked environment is specified in [`uv.lock`].
+This repository uses [uv](https://docs.astral.sh/uv/) for project management. Dependency bounds are defined in [`pyproject.toml`](pyproject.toml) and the locked environment is specified in [`uv.lock`](uv.lock).
 
 ```
 uv sync
@@ -20,7 +20,7 @@ uv run python aviation.py
 
 ### Documentation 
 
-This repository uses Mkdocs to generate a static documentation site. The contents of the site can be found in [`docs/`].
+This repository uses Mkdocs to generate a static documentation site. The contents of the site can be found in [`docs/`](docs).
 
 To serve the site locally, run: 
 
