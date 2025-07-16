@@ -15,10 +15,10 @@
 
 ### Equations
 
-$
+$$
 \text{passengers per day} = \frac{\text{passengers per year}}{\text{days per year}}
-$
+$$
 
-$
+$$
 \text{required global fleet} = \frac{\text{passengers per day}}{\text{seats per aircraft}\ \times\ \text{flights per aircraft per day}}
-$
+$$
