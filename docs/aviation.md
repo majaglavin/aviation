@@ -4,12 +4,12 @@
 
 | True Constant | Value |Unit | 
 | ---- | ---- | --| 
-| Days per year | 365 | $day \cdot year^{-1}$ | 
+| Days per year | 365 | day year^-1^ | 
 
 | Inputs | Value | Unit |Source |
 | ------ | ---- | ------ | --|
-| Passengers per year | $5\times 10^9$ | $year^{-1}$ | -|
-| Flights per aircraft per day| 2 | $day^{-1}$| - |
+| Passengers per year | $5\times 10^9$ | year^-1^ | -|
+| Flights per aircraft per day| 2 | day^-1^| - |
 | Seats per aircraft| 150 | - | - |
 
 
