@@ -6,6 +6,9 @@ nav:
   - Aviation Model: "aviation.md"
 
 markdown_extensions:
+markdown_extensions:
+  - pymdownx.caret
+  - pymdownx.tilde
   - pymdownx.arithmatex:
       generic: true
 
