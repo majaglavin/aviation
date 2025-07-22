@@ -12,7 +12,11 @@ dev = [
  "pytest>=8.4.1",
  "ruff>=0.12.3",
 ]
-docs = ["mkdocs-bibtex>=4.4.0", "mkdocs-material>=9.6.15"]
+docs = [
+    "mkdocs-bibtex>=4.4.0",
+    "mkdocs-material>=9.6.15",
+    "mkdocs-prebuild>=0.5.0",
+]
 
 [tool.ruff]
 line-length = 100
@@ -21,8 +25,11 @@ line-length = 100
 select = ["B", "E", "F", "I", "N", "SIM", "UP"]
 
 [tool.uv]
-
 default-groups = ["dev", "docs"]
+
+[[tool.uv.index]]
+name = "gitlab"
+url = "https://gitlab.developers.cam.ac.uk/api/v4/projects/8115/packages/pypi/simple"
 
 [build-system]
 requires = ["uv_build>=0.8.0,<0.9.0"]
