@@ -1,10 +1,10 @@
 # Aviation
 
-### Constants 
+### Constants
 
-| True Constant | Value |Unit | 
-| ---- | ---- | --| 
-| Days per year | 365 | day year^-1^ | 
+| True Constant | Value |Unit |
+| ---- | ---- | --|
+| Days per year | 365 | day year^-1^ |
 
 | Inputs | Value | Unit |Source |
 | ------ | ---- | ------ | --|

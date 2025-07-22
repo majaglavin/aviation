@@ -1,14 +1,14 @@
 site_name: My Docs
 theme:
   name: material
-nav: 
+nav:
   - Home: "index.md"
   - Aviation Model: "aviation.md"
 
 plugins:
   - search
   - bibtex:
-      bib_file: "https://api.zotero.org/groups/5782724/collections/G847TDER/items?format=bibtex" 
+      bib_file: "https://api.zotero.org/groups/5782724/collections/G847TDER/items?format=bibtex"
 
 markdown_extensions:
   - footnotes
