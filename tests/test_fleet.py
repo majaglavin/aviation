@@ -1,4 +1,5 @@
 import pytest
+
 from aviation.fleet import passengers_per_day, required_global_fleet
 
 @pytest.mark.parametrize(
