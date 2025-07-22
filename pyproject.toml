@@ -8,9 +8,10 @@ dependencies = []
 
 [dependency-groups]
 dev = [
+    "mypy>=1.17.0",
     "pre-commit>=4.2.0",
- "pytest>=8.4.1",
- "ruff>=0.12.3",
+    "pytest>=8.4.1",
+    "ruff>=0.12.3",
 ]
 docs = [
     "mkdocs-bibtex>=4.4.0",
@@ -18,14 +19,46 @@ docs = [
     "mkdocs-prebuild>=0.5.0",
 ]
 
+[tool.mypy]
+mypy_path = "src"
+strict = true
+
 [tool.ruff]
 line-length = 100
 
 [tool.ruff.lint]
-select = ["B", "E", "F", "I", "N", "SIM", "UP"]
+select = ["ALL"]
+ignore = [
+    "ANN1",
+    "COM812",
+    "COM819",
+    "D206",
+    "D300",
+    "E111",
+    "E114",
+    "E117",
+    "E501",
+    "ISC001",
+    "ISC002",
+    "Q000",
+    "Q001",
+    "Q002",
+    "Q003",
+    "W191",
+]
 
-[tool.uv]
-default-groups = ["dev", "docs"]
+[tool.ruff.lint.flake8-pytest-style]
+fixture-parentheses = false
+mark-parentheses = false
+parametrize-values-type = "tuple"
+
+
+[tool.ruff.lint.per-file-ignores]
+"analysis/*" = ["INP001", "T201"]
+"tests/*" = ["D1", "INP001", "S101"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
 
 [[tool.uv.index]]
 name = "gitlab"
