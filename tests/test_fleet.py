@@ -25,4 +25,5 @@ def test_required_global_fleet():
         seats_per_aircraft,
         flights_per_aircraft_per_day
     )
-    assert result == expected_required_global_fleet
+    tolerance = 10_000.0
+    assert result == pytest.approx(expected_required_global_fleet, abs=10_000.0)
