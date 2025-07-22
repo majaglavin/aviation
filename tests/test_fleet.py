@@ -1,6 +1,5 @@
-from aviation.fleet import passengers_per_day, required_global_fleet
-
 import pytest
+from aviation.fleet import passengers_per_day, required_global_fleet
 
 @pytest.mark.parametrize(
     ("passengers_per_year", "days_per_year", "expected_passengers_per_day"),
@@ -25,5 +24,4 @@ def test_required_global_fleet():
         seats_per_aircraft,
         flights_per_aircraft_per_day
     )
-    tolerance = 10_000.0
     assert result == pytest.approx(expected_required_global_fleet, abs=10_000.0)
