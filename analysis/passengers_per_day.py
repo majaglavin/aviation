@@ -1,12 +1,16 @@
 """Analysis to determine the number of passengers per day."""
 
+import camia_engine as engine
+from camia_model.units import year
+
 import aviation
+from aviation.units import passenger
 
-passengers_per_year = 5_000_000_000.0
-days_per_year = 366.0
+passengers_per_year = 5_000_000_000.0 * passenger / year
 
-passengers_per_day = aviation.passengers_per_day(
-    passengers_per_year=passengers_per_year, days_per_year=days_per_year
-)
+inputs = {"passengers_per_year": passengers_per_year}
+output = "passengers_per_day"
 
+systems_model = engine.SystemsModel(aviation.transforms)
+passengers_per_day = systems_model.evaluate(inputs, output)
 print(f"The number of passengers per day are: {passengers_per_day}")

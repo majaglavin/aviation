@@ -1,31 +1,44 @@
 """Modelling global fleet using average number of passengers and aircraft data."""
 
+__all__ = ("passengers_per_day", "required_global_fleet")
+
+import typing
+
 import camia_model as model
+from camia_model.units import Quantity, day, year
+
+from aviation.units import aircraft, journey, passenger
 
 
 @model.transform
-def passengers_per_day(passengers_per_year: float, days_per_year: float) -> float:
+def passengers_per_day(
+    passengers_per_year: typing.Annotated[Quantity, passenger / year],
+) -> typing.Annotated[Quantity, passenger / day]:
     """The number of passengers per day globally.
 
     Args:
-        passengers_per_year : Number of passengers flying in aircraft globally per year
-        days_per_year: Number of days in that specific year.
+        passengers_per_year: The number of passengers flying per year globally.
 
     """
-    return passengers_per_year / days_per_year
+    return passengers_per_year.convert_to(passenger / day)
 
 
 @model.transform
 def required_global_fleet(
-    passengers_per_day: float, seats_per_aircraft: float, flights_per_aircraft_per_day: float
-) -> float:
-    """The required global fleet per year.
+    passengers_per_day: typing.Annotated[Quantity, passenger / day],
+    seats_per_aircraft: typing.Annotated[Quantity, passenger / aircraft],
+    flights_per_aircraft_per_day: typing.Annotated[Quantity, journey / (aircraft * day)],
+) -> typing.Annotated[Quantity, aircraft]:
+    """The size of the required global fleet.
 
     Args:
-        passengers_per_day: Number of passengers per day in modelled year.
-        seats_per_aircraft: Number of available seats in one aircraft on average.
-        flights_per_aircraft_per_day: Number of flights that one aircraft makes per day
-            on average.
+        passengers_per_day: The number of passengers flying per day globally.
+        seats_per_aircraft: The average number of seats on a commercial aircraft.
+        flights_per_aircraft_per_day: The average number of flights a commercial aircraft makes on
+            average per day.
 
     """
-    return passengers_per_day / (seats_per_aircraft * flights_per_aircraft_per_day)
+    aircraft_per_journey = 1.0 * aircraft / journey
+    return passengers_per_day / (
+        seats_per_aircraft * flights_per_aircraft_per_day * aircraft_per_journey
+    )
