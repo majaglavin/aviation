@@ -4,22 +4,21 @@ version = "0.1.0"
 description = "A simple model of global aviation"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = [
-    "camia-engine>=0.4.4",
-    "camia-model>=0.6.4",
-]
+dependencies = ["camia-engine>=0.4.4", "camia-model>=0.6.4"]
 
 [dependency-groups]
 dev = [
     "mypy>=1.17.0",
     "pre-commit>=4.2.0",
     "pytest>=8.4.1",
+    "pytest-camia>=0.3.3",
     "ruff>=0.12.3",
 ]
 docs = [
     "mkdocs-bibtex>=4.4.0",
     "mkdocs-material>=9.6.15",
     "mkdocs-prebuild>=0.5.0",
+    "mkdocstrings[python]>=0.29.1",
 ]
 
 [tool.mypy]
@@ -28,6 +27,7 @@ strict = true
 
 [tool.ruff]
 line-length = 100
+target-version = "py313"
 
 [tool.ruff.lint]
 select = ["ALL"]
